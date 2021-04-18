@@ -16,6 +16,11 @@ public class HelloWorldController {
         this.userService = userService;
     }
 
+    @GetMapping
+    public Mono<String> get(){
+        return Mono.just("Hello World!");
+    }
+
     @GetMapping("/{id}")
     public Mono<String> get(@PathVariable int id){
         return userService.get(id).map(this::helloWorld).defaultIfEmpty("Hello World!");
