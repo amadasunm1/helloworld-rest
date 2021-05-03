@@ -18,6 +18,7 @@ public class HelloWorldController {
 
     @GetMapping
     public Mono<String> get(){
+        System.out.println("Hello test");
         return Mono.just("Hello World!");
     }
 
